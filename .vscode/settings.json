@@ -1,8 +1,5 @@
 {
+  "flow.enabled": true,
   "spellright.language": "en",
-  "spellright.documentTypes": [
-    "markdown",
-    "latex",
-    "javascript"
-  ]
+  "spellright.documentTypes": ["markdown", "latex", "javascript"]
 }

@@ -1,12 +1,24 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-// top menu - just for navigation in the demo
-const TopMenu = props => (
+type Route = {
+  path: string,
+  title: ?string,
+};
+
+type P = {
+  routes: Array<Route>,
+};
+/**
+ * List of links. Component expects routes props with path and title.
+ * @param {} props
+ */
+const TopMenu = (props: P) => (
   <ul>
     {props.routes.map((r, i) => (
       <li key={`tp_${i}`}>
-        <Link to={r.path}>{r.path.substr(1).toUpperCase()}</Link>
+        <Link to={r.path}>{r.title || r.path}</Link>
       </li>
     ))}
   </ul>

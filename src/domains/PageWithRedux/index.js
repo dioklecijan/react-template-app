@@ -1,23 +1,33 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { increment, decrement } from './redux';
 
-class PageWithRedux extends Component {
+type P = {
+  // redux actions
+  increment: () => mixed,
+  decrement: () => mixed,
+  // redux state
+  counter: number,
+  // props via route
+  title: string,
+};
+
+class PageWithRedux extends React.Component<P, {}> {
   // event handlers
   onIncrement = () => this.props.increment();
   onDecrement = () => this.props.decrement();
 
   // rendering
   render() {
-    console.log(this.props.state);
     return (
       <div>
         <h2>PageWithRedux</h2>
         <p>
           Demonstrates simple reducer that is dynamically added to the store.
         </p>
-        <hr />
-        <pre>state.PageWithRedux.counter: {this.props.counter}</pre>
+        <pre>this.props.title: {this.props.title}</pre>
+        <pre>this.props.counter: {this.props.counter}</pre>
         <button onClick={this.onIncrement}>INCREMENT</button>
         <button onClick={this.onDecrement}>DECREMENT</button>
       </div>

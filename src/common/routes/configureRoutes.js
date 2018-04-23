@@ -48,8 +48,17 @@ function _configureRoute(configItem) {
     loader: loader,
     loading: loading || Loading,
     render(loaded, props) {
+      const {
+        match,
+        location,
+        history,
+        staticContext,
+        exact,
+        path,
+        ...customProps
+      } = rest;
       let Component = loaded.default;
-      return <Component {...props} />;
+      return <Component {...props} {...customProps} />;
     },
   });
   return { component, ...rest };
