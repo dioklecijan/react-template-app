@@ -22,12 +22,11 @@ class PageWithRedux extends React.Component<P, {}> {
   render() {
     return (
       <div>
-        <h2>PageWithRedux</h2>
+        <h2>{this.props.title}</h2>
         <p>
           Demonstrates simple reducer that is dynamically added to the store.
         </p>
-        <pre>this.props.title: {this.props.title}</pre>
-        <pre>this.props.counter: {this.props.counter}</pre>
+        <pre>state.PageWithRedux.counter: {this.props.counter}</pre>
         <button onClick={this.onIncrement}>INCREMENT</button>
         <button onClick={this.onDecrement}>DECREMENT</button>
       </div>

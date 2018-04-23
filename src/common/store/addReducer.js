@@ -35,7 +35,7 @@ import { combineReducers } from 'redux';
 // that manually
 const ActionTypes = {
   ADD_REDUCER:
-    '@@ADD_REDUCER' +
+    '@@ADD_REDUCER_' +
     Math.random()
       .toString(36)
       .substring(7)
